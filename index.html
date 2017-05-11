@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="x-ua-compatible" content="IE=9">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>阅读行为眼动数据可视化系统</title>
+    <link rel="stylesheet" href="lib/bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+<!--导航部分-->
+<nav class="navbar navbar-default navbar-fixed-top navbar-inverse">
+    <div class="container">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="#">ReadingVis</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+                <!--<li><button class="btn btn-default navbar-btn btn-sm" id="btnAOI">设置AOI</button></li>-->
+                <li><a href="#" id="btnAOI">设置AOI</a></li>
+                <li><a href="#">按钮</a></li>
+                <li><a href="#">按钮</a></li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+                       aria-expanded="false">选择<span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#">Action</a></li>
+                        <li><a href="#">Another action</a></li>
+                        <li><a href="#">Something else here</a></li>
+                        <li role="separator" class="divider"></li>
+                        <li class="dropdown-header">Nav header</li>
+                        <li><a href="#">Separated link</a></li>
+                        <li><a href="#">One more separated link</a></li>
+                    </ul>
+                </li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="#">按钮</a></li>
+                <li><a href="#">按钮</a></li>
+                <li><a href="#">按钮<span class="sr-only">(current)</span></a></li>
+            </ul>
+        </div>
+
+    </div>
+</nav>
+
+<!--内容区-->
+<div class="content">
+    <div class="paper-area" id="paperArea">
+        <img src="material/paper.png" alt="">
+    </div>
+</div>
+
+
+<script src="lib/jquery/jquery-1.11.1.js"></script>
+<script src="lib/bootstrap/js/bootstrap.js"></script>
+<script src="lib/d3/d3.js"></script>
+<script src="js/kdtree.js"></script>
+<script src="js/getData.js"></script>
+<script src="js/kdtree_init.js"></script>
+<script src="js/aoi_enerator.js"></script>
+<script src="js/read_speed.js"></script>
+<script type="text/javascript">
+    $(function() {
+       var aoiGenerator = new AoiGenerator($('#btnAOI'), $('#paperArea'));
+        aoiGenerator.init();
+//        var point1 = {'sequence' : 4, 'x' : 2, 'y' : 3, 'duration' : 45};
+//        var point2 = {'sequence' : 2, 'x' : 3, 'y' : 4, 'duration' : 67};
+//        var point3 = {'sequence' : 5, 'x' : 4, 'y' : 5, 'duration' : 34};
+//        var point4 = {'sequence' : 1, 'x' : 6, 'y' : 7, 'duration' : 25};
+//        var point5 = {'sequence' : 3, 'x' : 7, 'y' : 8, 'duration' : 78};
+//        var aoiRangePoints = [{'aoiID' : 1, 'points' : [point1, point2, point3, point4, point5]}];
+//        console.log(JSON.stringify(caculateReadSpeed(aoiRangePoints)));
+//
+//        var aoi1 = {'id' : 1, 'xmin' : 1,  'ymin': 1, 'xmax' : 5, 'ymax': 5};
+//        var aoi2 = {'id' : 2, 'xmin' : 1,  'ymin': 6, 'xmax' : 5, 'ymax': 10};
+//        var aoi3 = {'id' : 3, 'xmin' : 1,  'ymin': 11, 'xmax' : 5, 'ymax': 15};
+//
+//        var point1 = {'x':2, 'y':2, 'duration':5};
+//        var point2 = {'x':2, 'y':12, 'duration':2};
+//        var point3 = {'x':2, 'y':12, 'duration':3};
+//        var point4 = {'x':2, 'y':2, 'duration':5};
+//        var point5 = {'x':2, 'y':7, 'duration':2};
+//        var point6 = {'x':2, 'y':7, 'duration':2};
+//
+//        var points = [point1, point2, point3, point4, point5, point6];
+//        var aois = [aoi1, aoi2, aoi3];
+//
+//        console.log(JSON.stringify(caculateReadCount(points, aois, 3, 5)));
+    });
+</script>
+</body>
+</html>
